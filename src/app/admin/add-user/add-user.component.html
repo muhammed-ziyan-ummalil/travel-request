@@ -1,0 +1,192 @@
+<!-- Updated Title -->
+<h1 class="visually-hidden">Add User</h1>
+
+<!-- Updated Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top bg-danger-subtle shadow" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/admin/dashboard" tabindex="1">
+      <img
+        src="assets/images/admin.png"
+        alt="Admin Portal Logo"
+        class="img-fluid"
+        style="height: 60px"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            href="#"
+            (click)="confirmLogout()"
+            aria-label="Logout"
+            >Log out</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<section class="container py-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card bg-success border-0 shadow-lg">
+        <div class="card-body p-4">
+          <!-- Add User Form -->
+          <form [formGroup]="addUserForm" (ngSubmit)="submitForm()">
+            <!-- User Type -->
+            <div class="mb-3">
+              <label for="userType" class="form-label">User Type</label>
+              <select
+                id="userType"
+                formControlName="user_type"
+                class="form-control"
+                required
+              >
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+              </select>
+            </div>
+
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                id="username"
+                class="form-control"
+                formControlName="username"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                formControlName="email"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                formControlName="password"
+                required
+              />
+            </div>
+
+            <!-- First Name -->
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                formControlName="first_name"
+                required
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                formControlName="last_name"
+                required
+              />
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select id="gender" formControlName="gender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Not Specified">Not Specified</option>
+              </select>
+            </div>
+
+            <!-- Designation -->
+            <div class="mb-3">
+              <label for="designation" class="form-label">Designation</label>
+              <input
+                type="text"
+                id="designation"
+                class="form-control"
+                formControlName="designation"
+                required
+              />
+            </div>
+
+            <!-- Status -->
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select id="status" formControlName="status" class="form-control">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+
+            <!-- Manager Dropdown (Only for Employee) -->
+            <div
+              class="mb-3"
+              *ngIf="addUserForm.get('user_type')?.value === 'employee'"
+            >
+              <label for="manager" class="form-label">Assign Manager</label>
+              <select id="manager" formControlName="manager" class="form-control">
+                <option *ngFor="let manager of managers" [value]="manager.id">
+                  {{ manager.first_name }} {{ manager.last_name }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="addUserForm.invalid || isSubmitting"
+              (click)="submitForm()"
+            >
+              Add User
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div *ngIf="successMessage" class="alert alert-success mt-3">
+            {{ successMessage }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+/* Modal background color to match theme */
+.modal-content {
+    background-color: #DCFFD6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal header with green background */
+  .modal-header {
+    background-color: #4A7856;
+    border-bottom: none;
+    color: white;
+  }
+  
+  /* Modal success button */
+  .modal-body .btn-success {
+    background-color: #4A7856;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-weight: bold;
+  }
+  

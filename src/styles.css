@@ -1,0 +1,282 @@
+body {
+  background-color: #1E3F20 !important; /* Dark Green Background */
+}
+
+/* Background color for success messages */
+.bg-success {
+  background-color: #345830 !important;
+}
+
+/* Background color for subtle success messages */
+.bg-success-subtle {
+  background-color: #1E3F20 !important;
+}
+
+/* Background color for success cards */
+.card.bg-success {
+  background-color: #4A7856 !important;
+}
+
+/* Transition effect for zoom on hover */
+.hover-zoom {
+  transition: transform 0.3s ease-out;
+}
+
+/* Transform effect for zoom on hover */
+.hover-zoom:hover {
+  transform: translateY(-10px);
+}
+
+/* Transition effect for navbar brand image */
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+/* Scale effect for navbar brand image on hover */
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* Background and border color for table header columns */
+.table-col thead th {
+  background-color: #7CAA7C !important;
+  border: 0.5px solid #2C5F2D !important;
+}
+
+/* Background and border color for table body rows */
+.table-col tbody tr {
+  background-color: #D0E0D0 !important;
+  border: 0.5px solid #6B8E7A !important;
+}
+
+/* Background and border color for table body cells */
+.table-col tbody tr td {
+  background-color: #DCFFD6 !important;
+  border: 0.5px solid #7CAA7C !important;
+}
+
+/* Logo height for navbar */
+.logo-height {
+  height: 60px;
+}
+
+/* Width for role cards */
+.card-width, .role-card {
+  width: 220px;
+}
+
+.login-card {
+  width: 400px;
+}
+
+/* Pagination Button Styles */
+.pagination-btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  margin: 0 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Previous Button */
+.btn-previous {
+  background-color: #B0C4B1 !important;
+  color: #345830;
+}
+
+.btn-previous:hover:not(.btn-disabled) {
+  background-color: #9cb49d !important;
+}
+
+/* Next Button */
+.btn-next {
+  background-color: #4A7856 !important;
+  color: white;
+}
+
+.btn-next:hover:not(.btn-disabled) {
+  background-color: #3d6749 !important;
+}
+
+/* Disabled Button Style */
+.btn-disabled {
+  background-color: #B0C4B1 !important;
+  color: #6B8E7A !important;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Modal styling to match the green theme */
+.modal-content {
+  background-color: #DCFFD6;
+  border: 2px solid #4A7856;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #7CAA7C;
+  border-bottom: none;
+  padding: 12px 15px;
+}
+
+.modal-title {
+  color: white !important;
+  font-weight: 600;
+}
+
+.modal-title.text-danger {
+  color: #ff6b6b !important;
+}
+
+.modal-body {
+  background-color: #f1faf1;
+  padding: 20px;
+  font-size: 16px;
+  color: #345830;
+}
+
+.modal-footer {
+  background-color: #f1faf1;
+  border-top: none;
+  padding: 15px;
+}
+
+/* Button styles to match the table buttons */
+.modal-footer .btn-secondary {
+  background-color: #B0C4B1;
+  border: none;
+  color: #345830;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #9cb49d;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Custom styles for the confirm cancellation modal */
+#confirmModal .modal-header {
+  background-color: #4A7856;
+}
+
+#confirmModal .modal-title {
+  color: #ffffff !important;
+}
+
+/* Pagination container improvements */
+.pagination-container {
+  padding: 10px 20px;
+  background-color: #f1faf1;
+  border-top: 1px solid #7CAA7C;
+  margin: 0 !important;
+}
+
+/* Text color for pagination info */
+.pagination-container .text-muted {
+  color: #345830 !important;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Better alert styling */
+.alert-success {
+  background-color: #DCFFD6;
+  border-left: 4px solid #4A7856;
+  color: #345830;
+}
+
+/* Close button for modal */
+.modal-header .btn-close {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  padding: 8px;
+  margin: -8px;
+}
+
+.modal-header .btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Fix for the white space at the bottom of the table */
+.card {
+  margin-bottom: 0;
+}
+
+/* Ensure the table takes up the full width and has no unexpected margins */
+.table-responsive {
+  margin-bottom: 0;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+/* Ensure card body doesn't have extra padding */
+.card-body {
+  padding: 0;
+}
+
+/* Make sure there's no extra space after the table */
+.table-responsive table {
+  border-collapse: collapse;
+}
+
+/* Ensure the last row doesn't have extra space */
+.table-col tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Fix for the entire container */
+.container {
+  padding-bottom: 0 !important;
+}
+
+/* Ensure footer elements don't add extra space */
+main > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure the card doesn't have extra space at the bottom */
+.card.border-0.shadow-lg.overflow-hidden {
+  margin-bottom: 0;
+}
+
+/* Make the pagination container match the table background */
+.pagination-container {
+  padding: 10px 20px;
+  background-color: #DCFFD6; /* Match the table cell background */
+  border-top: 1px solid #7CAA7C;
+  margin: 0 !important;
+}
+
+/* Separate pagination div and table styles */
+.table-container {
+  margin-bottom: 0;
+}
+
+.pagination-container {
+  padding: 2px 15px; /* Further reduced padding */
+  background-color: #DCFFD6;
+  border-top: 1px solid #7CAA7C;
+  margin: 0 !important;
+  font-size: 14px; 
+  /* line-height: 1.0; Optional: reduce line height for smaller spacing */
+}
+

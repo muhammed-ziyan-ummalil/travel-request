@@ -1,0 +1,72 @@
+<!-- Visually hidden Heading-1 for better SEO -->
+<h1 class="visually-hidden">Select Role</h1>
+
+
+
+<!-- Main Content -->
+<main class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <section class="row justify-content-center w-100 g-4">
+        <!-- Employee Card -->
+        <article class="col-auto">
+            <div
+                class="card bg-success bg-opacity-50 border-0 shadow-lg hover-zoom role-card"
+                tabindex="0"
+                (click)="selectRole('employee')"
+                (keyup.enter)="selectRole('employee')"
+                role="button"
+                aria-label="Select Employee Role"
+            >
+                <div class="card-body p-4 text-center">
+                    <img
+                        src="assets/images/employee.png"
+                        class="card-img-top mb-3"
+                        alt="Select Employee Role"
+                    />
+                    <h5 class="card-title text-white fw-bold mb-0">Employee</h5>
+                </div>
+            </div>
+        </article>
+
+        <!-- Manager Card  -->
+        <article class="col-auto">
+            <div
+                class="card bg-success bg-opacity-50 border-0 shadow-lg hover-zoom role-card"
+                tabindex="0"
+                (click)="selectRole('manager')"
+                (keyup.enter)="selectRole('manager')"
+                role="button"
+                aria-label="Select Manager Role"
+            >
+                <div class="card-body p-4 text-center">
+                    <img
+                        src="assets/images/manager.png"
+                        class="card-img-top mb-3"
+                        alt="Select Manager Role"
+                    />
+                    <h5 class="card-title text-white fw-bold mb-0">Manager</h5>
+                </div>
+            </div>
+        </article>
+
+        <!-- Admin Card -->
+        <article class="col-auto">
+            <div
+                class="card bg-success bg-opacity-50 border-0 shadow-lg hover-zoom role-card"
+                tabindex="0"
+                (click)="selectRole('admin')"
+                (keyup.enter)="selectRole('admin')"
+                role="button"
+                aria-label="Select Admin Role"
+            >
+                <div class="card-body p-4 text-center">
+                    <img
+                        src="assets/images/admin.png"
+                        class="card-img-top mb-3"
+                        alt="Select Admin Role"
+                    />
+                    <h5 class="card-title text-white fw-bold mb-0">Admin</h5>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>

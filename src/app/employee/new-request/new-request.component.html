@@ -1,0 +1,179 @@
+<!-- Visually hidden Heading-1 for better SEO -->
+<h1 class="visually-hidden">New Travel Request</h1>
+
+<!-- Navigation Bar Component -->
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top bg-success-subtle shadow">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" tabindex="1">
+        <img src="../../assets/images/employee.png" alt="Company Logo" class="img-fluid" style="height: 60px;" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main class="container py-5 mt-5">
+  <section class="row justify-content-center">
+    <article class="col-md-8">
+      <div class="card bg-success bg-opacity-50 border-0 shadow-lg">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4 text-white">New Travel Request</h2>
+
+          <!--  Success Modal -->
+          <div
+            *ngIf="showSuccessModal"
+            class="modal fade show d-block"
+            tabindex="-1"
+            role="dialog"
+            style="background-color: rgba(0, 0, 0, 0.5)"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content bg-success-subtle border-0 shadow-lg">
+                <div class="modal-header bg-success text-white">
+                  <h5 class="modal-title">Success</h5>
+                </div>
+                <div class="modal-body text-center">
+                  <p class="mb-3 text-success fw-bold">Travel request submitted successfully!</p>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    (click)="closeModal()"
+                  >
+                    Okay
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Starts -->
+          <form [formGroup]="travelForm" (ngSubmit)="submitRequest()">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label text-white" for="fromLocation">From Location</label>
+                <input
+                  type="text"
+                  id="fromLocation"
+                  class="form-control bg-light bg-opacity-75"
+                  formControlName="from_location"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-white" for="toLocation">To Location</label>
+                <input
+                  type="text"
+                  id="toLocation"
+                  class="form-control bg-light bg-opacity-75"
+                  formControlName="to_location"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label text-white" for="travelMode">Travel Mode</label>
+                <select
+                  id="travelMode"
+                  class="form-select bg-light bg-opacity-75"
+                  formControlName="travel_mode"
+                  required
+                >
+                  <option value="">Select travel mode</option>
+                  <option value="Air">Air</option>
+                  <option value="Train">Train</option>
+                  <option value="Bus">Bus</option>
+                  <option value="Car">Car</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-white" for="manager">Manager</label>
+                <input
+                  type="text"
+                  id="manager"
+                  class="form-control bg-light bg-opacity-75"
+                  [value]="managerName || 'No manager assigned'"
+                  readonly
+                />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label text-white" for="startDate">Start Date</label>
+                <input
+                  type="date"
+                  id="startDate"
+                  class="form-control bg-light bg-opacity-75"
+                  formControlName="start_date"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-white" for="endDate">End Date</label>
+                <input
+                  type="date"
+                  id="endDate"
+                  class="form-control bg-light bg-opacity-75"
+                  formControlName="end_date"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Lodging Details -->
+            <fieldset class="mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="lodgingRequired"
+                  formControlName="lodging_required"
+                />
+                <label class="form-check-label text-white" for="lodgingRequired"
+                  >Lodging Required</label
+                >
+              </div>
+              <div *ngIf="travelForm.get('lodging_required')?.value" class="mt-2">
+                <label class="form-label text-white" for="hotelPreference">Hotel Preference</label>
+                <input
+                  type="text"
+                  id="hotelPreference"
+                  class="form-control bg-light bg-opacity-75"
+                  formControlName="hotel_preference"
+                />
+              </div>
+            </fieldset>
+
+            <div class="mb-3">
+              <label class="form-label text-white" for="purpose">Purpose of Travel</label>
+              <textarea
+                id="purpose"
+                class="form-control bg-light bg-opacity-75"
+                rows="3"
+                formControlName="purpose"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Button Group at the Bottom of the Form -->
+            <div class="d-flex justify-content-end gap-2 mt-3">
+              <button type="button" class="btn btn-danger" [routerLink]="'/employee/dashboard'">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-success" [disabled]="!travelForm.valid">
+                Submit Request
+              </button>
+            </div>
+          </form>
+          <!-- Form Ends -->
+        </div> 
+      </div>
+    </article>
+  </section>
+</main>
