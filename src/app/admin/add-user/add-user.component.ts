@@ -13,7 +13,7 @@ export class AddUserComponent implements OnInit{
   successMessage: string | null = null;
   errorMessage: string | null = null;
   managers: any[] = []; // Store available managers
-  isSubmitting: boolean = false;
+  isSubmitting = false;
 
 
   constructor(

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-declare var bootstrap: any;
+declare let bootstrap: any;
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -24,11 +24,11 @@ export class AdminDashboardComponent implements OnInit {
     { label: 'Status', value: 'status' },
   ];
 
-  modalTitle: string = 'Approve Request';
-  modalMessage: string = 'Add notes for this approval (optional):';
-  modalButtonText: string = 'Confirm Approval';
-  closeNotes: string = '';
-  actionType: string = ''; // 'approve' or 'close'
+  modalTitle = 'Approve Request';
+  modalMessage = 'Add notes for this approval (optional):';
+  modalButtonText = 'Confirm Approval';
+  closeNotes = '';
+  actionType = ''; // 'approve' or 'close'
 
 
   
@@ -38,15 +38,15 @@ export class AdminDashboardComponent implements OnInit {
   userRole: string | null = 'admin';
 
   // Pagination
-  currentPage: number = 1;
-  itemsPerPage: number = 6;
-  totalPages: number = 1;
+  currentPage = 1;
+  itemsPerPage = 6;
+  totalPages = 1;
 
   // Filters & Sorting
   searchForm: FormGroup;
-  rejectReason: string = '';
-  requestInfoNotes: string = '';
-  approvalNotes: string = '';
+  rejectReason = '';
+  requestInfoNotes = '';
+  approvalNotes = '';
   selectedRequest: any = null;
   selectedRequestId: number | null = null;
 
