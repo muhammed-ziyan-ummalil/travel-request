@@ -150,7 +150,7 @@ export class DashboardComponent implements OnInit {
     this.openModal('viewMoreModal');
   }
 
-  // Open View Notes Modal - Updated to handle manager notes
+  // Open View Notes Modal 
   openViewNotesModal(request: any): void {
     this.selectedRequest = {
       manager_notes: request.manager_notes || 'No manager notes available.',
