@@ -12,7 +12,7 @@ export class AddUserComponent implements OnInit{
   addUserForm: FormGroup;
   successMessage: string | null = null;
   errorMessage: string | null = null;
-  managers: any[] = []; // Store available managers
+  managers: any[] = []; 
   isSubmitting = false;
 
 
@@ -57,10 +57,10 @@ export class AddUserComponent implements OnInit{
   submitForm(): void {
     if (this.addUserForm.invalid || this.isSubmitting) return;
   
-    this.isSubmitting = true; // ✅ Disable button after first click
+    this.isSubmitting = true; //  
     const formData = { ...this.addUserForm.value };
   
-    // ✅ Remove manager field if user type is 'manager'
+    //  Remove manager field if user type is 'manager'
     if (formData.user_type === 'manager') {
       delete formData.manager;
     }
@@ -76,14 +76,14 @@ export class AddUserComponent implements OnInit{
           user_type: 'manager',
           status: 'active',
         });
-        this.isSubmitting = false; // ✅ Enable button after success
+        this.isSubmitting = false; //  Enable button after success
         console.log('Form submitted:', formData);
 
       },
       error: (error) => {
         this.successMessage = null;
         this.errorMessage = error.error?.error || 'An unexpected error occurred.';
-        this.isSubmitting = false; // ✅ Enable button after error
+        this.isSubmitting = false; //  Enable button after error
       },
     });
   }
