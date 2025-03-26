@@ -15,7 +15,7 @@ export class AdminLoginComponent {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  // ✅ Submit admin login
+  // Submit admin login
   onSubmit() {
     const loginData = {
       email: this.email, // Use email as username
@@ -23,15 +23,15 @@ export class AdminLoginComponent {
       role: this.role, // Fixed role as admin
     };
 
-    // ✅ Send login request to backend
+    // Send login request to backend
     this.http.post<any>('http://127.0.0.1:8000/userlogin/', loginData).subscribe({
       next: (response) => {
-        // ✅ Store token and role in localStorage
+        // Store token and role in localStorage
         console.log(response)
         localStorage.setItem('auth_token', response.token);
         localStorage.setItem('role', response.role);
 
-        // ✅ Store admin-specific info if needed
+        // Store admin-specific info if needed
         if (response.role === 'admin' && response.admin_id !== null) {
           localStorage.setItem('admin_id', response.admin_id.toString());
           if (response.admin_name) {
@@ -42,13 +42,13 @@ export class AdminLoginComponent {
           localStorage.removeItem('admin_name');
         }
 
-        // ✅ Redirect admin to the admin dashboard
+        // Redirect admin to the admin dashboard
         if (response.role === 'admin') {
           this.router.navigate(['/admin/dashboard']);
         }
       },
       error: (error) => {
-        // ✅ Handle errors with relevant messages
+        // Handle errors with relevant messages
         if (error.status === 401) {
           this.errorMessage = 'Invalid credentials. Please check your email and password.';
         } else if (error.status === 0) {
