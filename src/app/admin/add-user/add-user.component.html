@@ -1,7 +1,7 @@
-<!-- Updated Title -->
+<!-- Title -->
 <h1 class="visually-hidden">Add User</h1>
 
-<!-- Updated Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top bg-danger-subtle shadow" role="navigation">
   <div class="container">
     <a class="navbar-brand" routerLink="/admin/dashboard" tabindex="1">
@@ -152,7 +152,7 @@
               </select>
             </div>
 
-            <!-- Manager Dropdown (Only for Employee) -->
+            <!-- Manager Dropdown -->
             <div
               class="mb-3"
               *ngIf="addUserForm.get('user_type')?.value === 'employee'"
