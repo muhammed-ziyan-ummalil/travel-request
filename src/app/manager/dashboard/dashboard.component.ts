@@ -274,7 +274,7 @@ export class DashboardComponent implements OnInit {
           setTimeout(() => (this.showApprovalSuccess = false), 3000);
           this.closeModal('approveModal'); // Close the modal
         },
-        error: (error) => {
+        error: () => {
           alert('Error approving request. Please try again.');
         },
       });
@@ -302,7 +302,7 @@ export class DashboardComponent implements OnInit {
           this.showApprovalSuccess = true;
           setTimeout(() => (this.showApprovalSuccess = false), 3000);
         },
-        error: (error) => {
+        error: () => {
           alert('Error approving request. Please try again.');
         },
       });
@@ -336,8 +336,8 @@ export class DashboardComponent implements OnInit {
           setTimeout(() => (this.showApprovalSuccess = false), 3000);
           this.closeModal('rejectModal'); // Close the reject modal
         },
-        error: (error) => {
-          alert('Error rejecting request. Please try again.');
+        error: () => {
+          alert('Error rejecting request. Please try again.',);
         },
       });
   }
@@ -370,7 +370,7 @@ export class DashboardComponent implements OnInit {
           setTimeout(() => (this.showApprovalSuccess = false), 3000);
           this.closeModal('requestInfoModal'); // Close the modal
         },
-        error: (error) => {
+        error: () => {
           alert('Error requesting information. Please try again.');
         },
       });
